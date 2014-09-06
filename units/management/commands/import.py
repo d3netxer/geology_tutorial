@@ -10,7 +10,7 @@ class Command(BaseCommand):
     help = 'Loads geologic unit data from app data directory'
 
     def handle(self, *args, **options):
-        unit_shp = os.path.abspath(os.path.join(os.path.join(os.path.dirname(units.__file__), 'data/cogeol.kml')))
+        unit_shp = os.path.abspath(os.path.join(os.path.join(os.path.dirname(units.__file__), 'data/vageol.kml')))
 
         lm = LayerMapping(Unit, unit_shp, unit_mapping, 
             transform=False, encoding='iso-8859-1') 

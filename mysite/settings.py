@@ -26,7 +26,8 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+#http://stackoverflow.com/questions/10584852/my-postgis-database-looks-fine-but-geodjango-thinks-otherwise-why
+POSTGIS_VERSION = ( 2, 1 )
 # Application definition
 
 INSTALLED_APPS = (
@@ -61,11 +62,11 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'geodjango',
-        'USER': 'postgres',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
+        'NAME': 'geology',
+        'USER': 'geouser',
+        'PASSWORD': 'geopassword',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -86,4 +87,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
+
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    '/units/static',
+)
+
+
